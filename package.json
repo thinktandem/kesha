@@ -1,0 +1,27 @@
+{
+  "name": "timber-starter-theme",
+  "version": "0.0.1",
+  "description": "Timber Starter Theme Sassy SaSS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "authors": [
+    "John Ouellet <john@thinktandem.io>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-sass": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-postcss": "latest",
+    "autoprefixer": "latest"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 20 versions"
+  ],
+  "dependencies": {
+    "load-grunt-tasks": "latest"
+  }
+}
