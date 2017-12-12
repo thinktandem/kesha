@@ -1,4 +1,4 @@
-## [Ke$ha](https://www.youtube.com/watch?v=hHUbLv4ThOo): Tandem's Fork of Timber Starter Theme feat [Bootstrap 4](https://getbootstrap.com/)
+## [Ke$ha](https://www.youtube.com/watch?v=hHUbLv4ThOo): Tandem's Fork of Timber Starter Theme feat. [Bootstrap 4](https://getbootstrap.com/)
 
 This site uses an atomic design type structure for it's SaSS.
 
