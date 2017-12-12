@@ -2,6 +2,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   var themeJs = [
+    'assets/js/**/*.js',
     'assets/js/theme.js',
   ];
 
@@ -78,7 +79,7 @@ module.exports = function(grunt) {
   // Initialize the configuration.
   grunt.initConfig(config);
 
-  grunt.registerTask("prodbuild", ['sass:dist', 'postcss', 'cssmin']);
-  grunt.registerTask("devbuild", ['sass:dev', 'postcss', 'cssmin']);
+  grunt.registerTask("prodbuild", ['sass:dist', 'concat', 'uglify', 'postcss', 'cssmin']);
+  grunt.registerTask("devbuild", ['sass:dev', 'concat', 'uglify', 'postcss', 'cssmin']);
   grunt.registerTask("default", ['devbuild']);
 };

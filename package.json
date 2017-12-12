@@ -2,9 +2,6 @@
   "name": "timber-starter-theme",
   "version": "0.0.1",
   "description": "Timber Starter Theme Sassy SaSS",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "authors": [
     "John Ouellet <john@thinktandem.io>"
   ],
@@ -13,6 +10,8 @@
     "grunt": "latest",
     "grunt-sass": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-postcss": "latest",
     "autoprefixer": "latest"
@@ -22,6 +21,14 @@
     "last 20 versions"
   ],
   "dependencies": {
-    "load-grunt-tasks": "latest"
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.2.1",
+    "load-grunt-tasks": "latest",
+    "popper.js": "^1.12.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "rm -rf assets/style/bootstrap/ && rm -rf assets/js/bootstrap/",
+    "postinstall": "cp -r node_modules/bootstrap/scss/. assets/style/bootstrap/ && cp -r node_modules/bootstrap/js/dist/. assets/js/bootstrap/"
   }
 }
