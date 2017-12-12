@@ -1,4 +1,4 @@
-## Ke$ha: Tandem's Fork of Timber Starter Theme
+## [Ke$ha](https://www.youtube.com/watch?v=hHUbLv4ThOo): Tandem's Fork of Timber Starter Theme
 
 This site uses an atomic design type structure for it's SaSS.
 
