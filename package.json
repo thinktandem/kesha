@@ -7,14 +7,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "latest",
     "grunt": "latest",
-    "grunt-sass": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-uglify": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "latest",
     "grunt-postcss": "latest",
-    "autoprefixer": "latest"
+    "grunt-sass": "latest"
   },
   "browserslist": [
     "> 1%",
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "rm -rf assets/style/bootstrap/ && rm -rf assets/js/bootstrap/",
-    "postinstall": "cp -r node_modules/bootstrap/scss/. assets/style/bootstrap/ && cp -r node_modules/bootstrap/js/dist/. assets/js/bootstrap/"
+    "preinstall": "rm -rf assets/style/bootstrap/ && rm -rf assets/js/bootstrap.js && rm -rf assets/js/popper.js",
+    "postinstall": "cp -r node_modules/bootstrap/scss/. assets/style/bootstrap/ && cp -r node_modules/bootstrap/dist/js/bootstrap.js assets/js/ && cp -r node_modules/popper.js/dist/popper.js assets/js/"
   }
 }

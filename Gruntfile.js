@@ -2,7 +2,8 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   var themeJs = [
-    'assets/js/**/*.js',
+    'assets/js/popper.js',
+    'assets/js/bootstrap.min.js',
     'assets/js/theme.js',
   ];
 
