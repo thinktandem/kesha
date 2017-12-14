@@ -18,7 +18,7 @@ function kesha_theme_scripts() {
   wp_enqueue_style( 'theme' );
 
   // Register JS.
-  wp_register_script( 'scripts', get_template_directory_uri() . '/dist/css/built.min.js', array( 'jquery' ), rand(111,9999), TRUE );
+  wp_register_script( 'scripts', get_template_directory_uri() . '/dist/js/built.min.js', array( 'jquery' ), rand(111,9999), TRUE );
 
   // Enqueue JS
   wp_enqueue_script( 'scripts' );
