@@ -29,6 +29,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "rm -rf assets/style/bootstrap/ && rm -rf assets/js/bootstrap.js && rm -rf assets/js/popper.js",
-    "postinstall": "cp -r node_modules/bootstrap/scss/. assets/style/bootstrap/ && cp -r node_modules/bootstrap/dist/js/bootstrap.js assets/js/ && cp -r node_modules/popper.js/dist/popper.js assets/js/"
+    "postinstall": "cp -r node_modules/bootstrap/scss/. assets/style/bootstrap/ && cp -r node_modules/bootstrap/dist/js/bootstrap.js assets/js/ && cp -r node_modules/popper.js/dist/umd/popper.js assets/js/"
   }
 }
