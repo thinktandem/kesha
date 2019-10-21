@@ -14,16 +14,24 @@
     "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
     "grunt-contrib-watch": "latest",
     "grunt-postcss": "latest",
-    "grunt-sass": "latest"
+    "grunt-sass": "2.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 20 versions"
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
   ],
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0",
     "jquery": "^3.2.1",
-    "load-grunt-tasks": "latest",
+    "load-grunt-tasks": "4.0.0",
     "popper.js": "^1.12.9"
   },
   "scripts": {
