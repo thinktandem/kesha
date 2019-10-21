@@ -11,7 +11,7 @@
     "grunt": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-uglify": "4.0.0",
     "grunt-contrib-watch": "latest",
     "grunt-postcss": "latest",
     "grunt-sass": "2.0.0"
