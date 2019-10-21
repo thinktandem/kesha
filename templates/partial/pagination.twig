@@ -1,26 +1,30 @@
 {% if posts.pagination.pages is not empty %}
-    <div class="pagination-block">
+    <nav class="pagination-block">
         <ul class="pagination">
+
+            {# First #}
             {% if pagination.pages|first and pagination.pages|first.current != true %}
                 <li class="first btn">
                     <a href="{{ pagination.pages|first.link }}">First</a>
                 </li>
             {% else %}
                 <li class="first btn disabled">
-                    <a>First</a>
+                    <button disabled>First</button>
                 </li>
             {% endif %}
 
+            {# Previous #}
             {% if pagination.prev %}
                 <li class="prev btn">
                     <a href="{{ pagination.prev.link }}">Previous</a>
                 </li>
             {% else %}
                 <li class="prev btn disabled">
-                    <a>Previous</a>
+                    <button disabled>Previous</button>
                 </li>
             {% endif %}
 
+            {# Pages #}
             {% for page in pagination.pages %}
                 {% if page.link %}
                     <li>
@@ -28,33 +32,33 @@
                     </li>
                 {% else %}
                     <li class="current">
-                        <a class="{{ page.class }}">{{ page.title }}</a>
+                        <span class="{{ page.class }}">{{ page.title }}</span>
                     </li>
                 {% endif %}
             {% endfor %}
 
+            {# Next #}
             {% if pagination.next %}
                 <li class="next btn">
-                    <a href="{{ pagination.next.link }}">
-                        Next
-                    </a>
+                    <a href="{{ pagination.next.link }}">Next</a>
                 </li>
             {% else %}
                 <li class="next btn disabled">
-                    <a>
-                        Next
-                    </a>
+                    <button disabled>Next</button>
                 </li>
             {% endif %}
+
+            {# Last #}
             {% if pagination.pages|last and pagination.pages|last.current != true %}
                 <li class="last btn">
                     <a href="{{ pagination.pages|last.link }}">Last</a>
                 </li>
             {% else %}
                 <li class="last btn disabled">
-                    <a>Last</a>
+                    <button disabled>Last</button>
                 </li>
             {% endif %}
+            
         </ul>
-    </div>
+    </nav>
 {% endif %}

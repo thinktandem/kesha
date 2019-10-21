@@ -1,6 +1,15 @@
 <?php
+/**
+ * Timber starter-theme
+ * https://github.com/timber/starter-theme
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since   Timber 0.1
+ */
 
 /**
+<<<<<<< HEAD
  * Ke$ha functions and definitions
  *
  * @package kesha

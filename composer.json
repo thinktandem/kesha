@@ -4,10 +4,14 @@
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
-      {
-          "name": "jarednova",
-          "email": "jared@upstatement.com"
-      }
+    {
+      "name": "jarednova",
+      "email": "jared@upstatement.com"
+    },
+    {
+      "name": "John Ouellet",
+      "email": "john@thinktandem.io"
+    }
   ],
   "repositories": [
     {
@@ -16,14 +20,14 @@
     }
   ],
   "extra": {
-  	"installer-paths": {
+    "installer-paths": {
       "../../plugins/{$name}/": [
         "wpackagist-plugin/*",
         "type:wordpress-plugin"
       ]
-  	}
-	},
+    }
+  },
   "require": {
-	  "timber/timber": "^1.5"
+    "timber/timber": "^1.12"
   }
 }
