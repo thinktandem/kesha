@@ -7,14 +7,15 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@lodder/grunt-postcss": "^3.0.0",
     "autoprefixer": "latest",
     "grunt": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-uglify": "4.0.0",
     "grunt-contrib-watch": "latest",
-    "grunt-postcss": "latest",
-    "grunt-sass": "2.0.0"
+    "grunt-sass": "2.0.0",
+    "postcss": "^8.1.2"
   },
   "browserslist": [
     "last 1 major version",
