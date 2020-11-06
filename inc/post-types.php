@@ -77,11 +77,9 @@ function register_cpts() {
       $args['capabilities'] = [
         'create_posts' => 'create_' . $slug_plural,
         'delete_others_posts' => 'delete_others_' . $slug_plural,
-        'delete_post' => 'delete_' . $slug,
         'delete_posts' => 'delete_' . $slug_plural,
         'delete_private_posts' => 'delete_private_' . $slug_plural,
         'delete_published_posts' => 'delete_published_' . $slug_plural,
-        'edit_post' => 'edit_' . $slug,
         'edit_posts' => 'edit_' . $slug_plural,
         'edit_others_posts' => 'edit_others_' . $slug_plural,
         'edit_private_posts' => 'edit_private_' . $slug_plural,
@@ -89,7 +87,6 @@ function register_cpts() {
         'publish_posts' => 'publish_' . $slug_plural,
         'read_private_posts' => 'read_private_' . $slug_plural,
         'read' => 'read',
-        'read_post' => 'read_' . $slug,
       ];
     }
 
