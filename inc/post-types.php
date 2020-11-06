@@ -18,59 +18,66 @@ function register_cpts() {
   ];
 
   foreach ($types as $type => $data) {
+    // Sets the defaults.
     $slug = str_replace(["/", "  ", " "], ["", " ", "_"], $type);
+    $singular = isset($data['singular']) ? $data['singular'] : $type;
     $plural = isset($data['plural']) ? $data['plural'] : $type . 's';
     $slug_plural = isset($data['plural']) ? $data['plural'] : $slug . 's';
+    $menu_name = isset($data['menu_name']) ? $data['menu_name'] : $plural;
+    $slug_base = isset($data['slug_base']) ? $data['slug_base'] : $slug;
+    $taxonomies = isset($data['taxonomies']) ? $data['taxonomies'] : [];
+    $supports = isset($data['supports']) ? $data['supports'] : [
+      'title',
+      'editor',
+      'author',
+      'thumbnail',
+      'excerpt',
+      'revisions',
+      'custom-fields',
+      'page-attributes'
+    ];
+
+    // Applies the defaults to the labels.
     $labels = [
-      'name' => ucwords($plural),
-      'singular_name' => ucwords($type),
-      'add_new_item' => 'Add New ' . ucwords($type),
-      'edit_item' => 'Edit ' . ucwords($type),
-      'new_item' => 'New ' . ucwords($type),
-      'view_item' => 'View ' . ucwords($type),
-      'search_items' => 'Search ' . ucwords($plural),
-      'not_found' => 'No ' . strtolower($plural) . ' found',
-      'not_found_in_trash' => 'No ' . strtolower($plural) . ' found in Trash',
-      'parent_item_colon' => 'Parent ' . ucwords($type) . ':',
-      'all_items' => 'All ' . ucwords($plural),
-      'archives' => ucwords($type) . ' Archives',
+      'name' => __( ucwords($plural), 'kesha' ),
+      'menu_name' => __( ucwords($menu_name), 'kesha' ),
+      'singular_name' => __( ucwords($plural), 'kesha' ),
+      'add_new_item' => __( 'Add New ' . ucwords($singular), 'kesha' ),
+      'edit_item' => __( 'Edit ' . ucwords($singular), 'kesha' ),
+      'new_item' => __( 'New ' . ucwords($singular), 'kesha' ),
+      'view_item' => __( 'View ' . ucwords($singular), 'kesha' ),
+      'search_items' => __( 'Search ' . ucwords($plural), 'kesha' ),
+      'not_found' => __( 'No ' . strtolower($plural) . ' found', 'kesha' ),
+      'not_found_in_trash' => __( 'No ' . strtolower($plural) . ' found in Trash', 'kesha' ),
+      'parent_item_colon' => __( 'Parent ' . ucwords($singular) . ':', 'kesha' ),
+      'all_items' => __( 'All ' . ucwords($plural), 'kesha' ),
+      'archives' => __( ucwords($singular) . ' Archives', 'kesha' ),
     ];
 
     $args = [
       'labels' => $labels,
-      'description' => 'Sortable/filterable ' . $plural,
+      'description' => __( 'Sortable/filterable ' . $plural , 'kesha'),
       'public' => true,
       'has_archive' => isset($data['has_archive']) ? $data['has_archive'] : false,
       'show_ui' => isset($data['show']) ? $data['show'] : true,
       'show_in_nav_menus' => isset($data['show']) ? $data['show'] : true,
       'show_in_menu' => isset($data['show']) ? $data['show'] : true,
       'show_in_admin_bar' => isset($data['show']) ? $data['show'] : true,
-      'menu_position' => 20,
+      'menu_position' => isset($data['position']) ? $data['position'] : 20,
       'menu_icon' => $data['icon'],
       'hierarchical' => true,
       'rewrite' => [
-        'slug' => isset($data['slug_base']) ? $data['slug_base'] . $slug : $slug,
+        'slug' => __( $slug_base, 'kesha'),
         'with_front' => false,
         'feeds' => true,
       ],
       'query_var' => true,
       'show_in_rest' => true,
-      'taxonomies'  => [
-        'category',
-        'post_tag'
-      ],
-      'supports' => [
-        'title',
-        'editor',
-        'author',
-        'thumbnail',
-        'excerpt',
-        'revisions',
-        'custom-fields',
-        'page-attributes'
-      ],
+      'taxonomies'  => $taxonomies,
+      'supports' => $supports,
     ];
 
+    // Custom permissions.
     if (isset($data['caps']) && $data['caps']) {
       $args['map_meta_cap'] = true;
       $args['capability_type'] = $slug;
@@ -89,10 +96,7 @@ function register_cpts() {
         'read' => 'read',
       ];
     }
-
     register_post_type($slug, $args);
-    // Uncomment this if you make changes to the post types.
-    //flush_rewrite_rules();
   }
 }
 add_action('init', 'register_cpts');
