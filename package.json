@@ -7,15 +7,15 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@lodder/grunt-postcss": "^3.0.0",
-    "autoprefixer": "latest",
-    "grunt": "latest",
+    "@lodder/grunt-postcss": "^3.0.1",
+    "autoprefixer": "^10.2.5",
+    "grunt": "^1.4.0",
     "grunt-contrib-concat": "latest",
-    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-uglify": "4.0.0",
     "grunt-contrib-watch": "latest",
     "grunt-sass": "2.0.0",
-    "postcss": "^8.1.2"
+    "postcss": "^8.2.15"
   },
   "browserslist": [
     "last 1 major version",
@@ -30,8 +30,8 @@
     "Opera >= 30"
   ],
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "jquery": "^3.2.1",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
     "load-grunt-tasks": "4.0.0",
     "popper.js": "^1.12.9"
   },
